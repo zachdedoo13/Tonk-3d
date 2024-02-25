@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://civuxe5px1c6n"]
+
+[ext_resource type="Script" path="res://player/Player.gd" id="1_2w0px"]
+[ext_resource type="PackedScene" uid="uid://bgrytsl5krjn2" path="res://player/rounds/Bacic_round.tscn" id="2_rm3f6"]
+[ext_resource type="ArrayMesh" uid="uid://dfj2atav2sdnx" path="res://lib/assets/Tank.obj" id="3_oxdqt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r10ih"]
+size = Vector3(1.9845, 1.34955, 2.2124)
+
+[node name="Player" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["mobs"]]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_2w0px")
+round = ExtResource("2_rm3f6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.11, 0, 0.09, 0)
+mesh = ExtResource("3_oxdqt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0297241, 0.675488, -0.010498)
+shape = SubResource("BoxShape3D_r10ih")

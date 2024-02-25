@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgrytsl5krjn2"]
+
+[ext_resource type="Script" path="res://player/rounds/Bacic.gd" id="1_gyinl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8uago"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnj5e"]
+albedo_color = Color(0.572549, 0.94902, 1, 1)
+metallic = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_n8xto"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dvnh"]
+albedo_color = Color(1, 0.439216, 0.466667, 1)
+metallic = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dgcdw"]
+
+[node name="BacicRound" type="CharacterBody3D"]
+transform = Transform3D(-1.96701e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.96701e-08, 0, 0, 0)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_gyinl")
+speed = 10
+max_collisions = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.765, 0, 0, 0, -2.45658e-08, -0.765, 0, 0.562, -3.34392e-08, 0, 1.64336, 0)
+mesh = SubResource("CapsuleMesh_8uago")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qnj5e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.65, -3.55271e-15, 1.05879e-22, 0, -1.94516e-08, -0.65, 3.55271e-15, 0.445, -2.84124e-08, 3.17556e-10, 1.64336, 0.192735)
+mesh = SubResource("CapsuleMesh_n8xto")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_2dvnh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, -7.10543e-15, 0, 0, -3.0598e-08, -0.7, 7.10543e-15, 0.7, -3.0598e-08, 0, 1.64336, 0)
+shape = SubResource("CapsuleShape3D_dgcdw")
