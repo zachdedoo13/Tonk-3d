@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvq1qnk1mf5"]
+
+[ext_resource type="Script" path="res://lib/rays/Ray_utils.gd" id="1_05tyw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v83qb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kip08"]
+albedo_color = Color(0.686275, 0.988235, 0, 1)
+
+[node name="RayUtils" type="RayCast3D"]
+collision_mask = 2
+script = ExtResource("1_05tyw")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+
+[node name="contact" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.516, 0, 0, 0, 1.516, 0, 0, 0, 1.516, 8.10492, 0, 0)
+mesh = SubResource("BoxMesh_v83qb")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_kip08")
+
+[node name="contact2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.448, 0, 0, 0, 0.448, 0, 0, 0, 0.448, 0.0321276, 0.880732, -2.70798)
+mesh = SubResource("BoxMesh_v83qb")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_kip08")

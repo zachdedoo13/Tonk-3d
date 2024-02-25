@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfj2atav2sdnx"
+path="res://.godot/imported/Tank.obj-b171a47aef332d9304d8988ae23dcbe0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tank.obj-b171a47aef332d9304d8988ae23dcbe0.mesh"]
+
+source_file="res://assets/Tank.obj"
+dest_files=["res://.godot/imported/Tank.obj-b171a47aef332d9304d8988ae23dcbe0.mesh", "res://.godot/imported/Tank.obj-b171a47aef332d9304d8988ae23dcbe0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
