@@ -21,3 +21,5 @@ func _physics_process(delta):
 		var pos = inter.position
 		if is_instance_valid($Player/CharacterBody3D):
 			$Player/CharacterBody3D.look_at(Vector3(pos.x, position.y, pos.z), Vector3(0, 1, 0))
+		else:
+			$Text.position = Vector3(0, 4.107, 0)

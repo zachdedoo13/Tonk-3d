@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf2oc4bxl3glb"]
+[gd_scene load_steps=7 format=3 uid="uid://bf2oc4bxl3glb"]
 
 [ext_resource type="Script" path="res://scripts/PlayerLookAtMouse.gd" id="1_ntsly"]
 [ext_resource type="PackedScene" uid="uid://civuxe5px1c6n" path="res://player/player.tscn" id="1_sqh80"]
 [ext_resource type="PackedScene" uid="uid://bgrytsl5krjn2" path="res://player/rounds/Bacic_round.tscn" id="3_lvo7i"]
+
+[sub_resource type="TextMesh" id="TextMesh_ve16e"]
+text = "you fucken died"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfspi"]
 albedo_color = Color(0, 0.72549, 0.831373, 1)
@@ -21,12 +24,16 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.472351, 0.881411, 0, -0.881411, 0.472351, 0, 10.8985, 8.01994)
 size = 25.0
 
+[node name="Text" type="MeshInstance3D" parent="."]
+transform = Transform3D(19.32, 0, 0, 0, 12.0402, 10.5064, 0, -22.4672, 5.63042, 32.478, 4.1074, 0)
+mesh = SubResource("TextMesh_ve16e")
+skeleton = NodePath("../Camera3D")
+
 [node name="Player" parent="." instance=ExtResource("1_sqh80")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.73427)
 
 [node name="mouse_plain" type="CSGBox3D" parent="."]
 transform = Transform3D(103.165, 0, 0, 0, 0.01, 0, 0, 0, 103.165, 0, 0.01, 0)
-visible = false
 layers = 0
 use_collision = true
 

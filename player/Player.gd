@@ -7,7 +7,7 @@ extends CharacterBody3D
 func _physics_process(delta):
 	
 	#movement
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = Input.get_vector("left", "right", "up", "down")
 	var move = direction * speed * delta
 	position += Vector3(move.x, 0, move.y)
 	move_and_slide()

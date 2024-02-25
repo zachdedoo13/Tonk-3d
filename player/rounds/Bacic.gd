@@ -19,7 +19,7 @@ func _physics_process(delta):
 	else:
 		var collision = move_and_collide(velocity * delta)
 		if collision:
-			if collision.get_collider().is_in_group("mobs"):
+			if collision.get_collider().is_in_group("player"):
 				collision.get_collider().queue_free()
 			collision_count += 1
 			if collision_count >= max_collisions:
