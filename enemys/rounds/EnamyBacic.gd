@@ -17,19 +17,17 @@ func _physics_process(delta):
 		velocity.x = vel.y
 		first = false
 	else:
-		
 		var collision = move_and_collide(velocity * delta)
 		if collision:
 			if collision.get_collider().is_in_group("player"):
 				collision.get_collider().queue_free()
-			if collision.get_collider().is_in_group("enemy"):
-				collision.get_collider().queue_free()
 			collision_count += 1
 			if collision_count >= max_collisions:
 				queue_free()
+			if collision_count >= 0:
+				set_collision_layer_value(3, true)
+				set_collision_mask_value(3, true)
 			velocity = velocity.bounce(collision.get_normal())
 			test.x = velocity.z
 			test.y = velocity.x
 			rotation.y = test.angle()
-			set_collision_layer_value(3, true)
-			set_collision_mask_value(3, true)

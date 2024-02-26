@@ -15,8 +15,8 @@ size = Vector3(1.9845, 1.34955, 2.2124)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
-collision_layer = 6
-collision_mask = 6
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_2w0px")
 chamber_capacity = 4
 round = ExtResource("2_rm3f6")
